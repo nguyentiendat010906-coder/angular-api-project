@@ -1,0 +1,12 @@
+# Visual Studio cache folder
+.vs/
+
+# Logs and database files
+*.log
+*.db
+
+# IDE files (optional)
+.vscode/
+
+# Sensitive environment files
+.env
