@@ -1,0 +1,44 @@
+<h2 class="title">Sản phẩm</h2>
+
+<!-- SEARCH BAR -->
+
+<div class="search-input">
+  <svg class="icon" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7"></circle>
+    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+  </svg>
+  <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+</div>
+
+<div class="table-wrapper" *ngIf="products.length; else empty">
+  <table>
+    <thead>
+      <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Tồn kho</th>
+        <th>Trạng thái</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{ p.name }}</td>
+        <td>{{ p.price | number }} đ</td>
+        <td>{{ p.stock }}</td>
+        <td>
+          <span class="badge in-stock" *ngIf="p.stock > 0">
+            Còn hàng
+          </span>
+          <span class="badge out-stock" *ngIf="p.stock === 0">
+            Hết hàng
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #empty>
+  <p class="empty">Chưa có sản phẩm</p>
+</ng-template>

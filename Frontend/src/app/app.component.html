@@ -1,0 +1,19 @@
+<div class="layout">
+  <aside class="sidebar"
+    *ngIf="router.url !== '/login' && router.url !== '/register'">
+
+    <h2 class="logo">Quản lý</h2>
+
+    <ul class="menu">
+      <li routerLink="/overview" routerLinkActive="active">Tổng quan</li>
+      <li routerLink="/products" routerLinkActive="active">Sản phẩm</li>
+      <li routerLink="/customers" routerLinkActive="active">Khách hàng</li>
+    </ul>
+
+    <button class="logout" (click)="logout()">Đăng xuất</button>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

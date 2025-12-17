@@ -1,0 +1,80 @@
+<div class="overview">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>Tổng quan</h2>
+    <p>Chào mừng trở lại! Đây là tổng quan về cửa hàng của bạn.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card blue">
+      <div class="stat-left">
+        <p>Tổng sản phẩm</p>
+        <h3>{{ totalProducts }}</h3>
+      </div>
+      <div class="stat-icon blue">
+        📦
+      </div>
+      <div class="stat-line blue"></div>
+    </div>
+
+    <div class="stat-card green">
+      <div class="stat-left">
+        <p>Khách hàng</p>
+        <h3>{{ totalCustomers }}</h3>
+      </div>
+      <div class="stat-icon green">
+        👤
+      </div>
+      <div class="stat-line green"></div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts">
+    <div class="card">
+      <h4>📊 Thống kê tồn kho</h4>
+      <canvas id="inventoryChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h4>💰 Xu hướng 6 tháng</h4>
+      <canvas id="revenueChart"></canvas>
+    </div>
+  </div>
+
+  <!-- TABLES -->
+  <div class="tables">
+    <div class="card">
+      <h4>📦 Sản phẩm mới nhất</h4>
+      <table>
+        <tr>
+          <th>Tên</th>
+          <th>Giá</th>
+          <th>Kho</th>
+        </tr>
+        <tr *ngFor="let p of latestProducts">
+          <td>{{ p.name }}</td>
+          <td>{{ p.price | number }} đ</td>
+          <td>{{ p.stock }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h4>👤 Khách hàng mới nhất</h4>
+      <table>
+        <tr>
+          <th>Tên</th>
+          <th>SĐT</th>
+        </tr>
+        <tr *ngFor="let c of latestCustomers">
+          <td>{{ c.name }}</td>
+          <td>{{ c.phone }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
